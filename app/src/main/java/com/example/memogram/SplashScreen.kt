@@ -27,19 +27,9 @@ class SplashScreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+        Glide.with(this).load(R.drawable.memogram).into(imageView)
 
-
-        Glide.with(this).load(R.drawable.giphy).into(imageView)
-
-
-        // we used the postDelayed(Runnable, time) method
-        // to send a message with a delayed time.
-        //Normal Handler is depricated , so we have to change the code little bit
-
-        // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
-
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
