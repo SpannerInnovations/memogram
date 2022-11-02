@@ -20,6 +20,7 @@ class UserHome : AppCompatActivity() {
 
         name = findViewById(R.id.homeusername);
         name.text = intent.getStringExtra("firstname")
+
         val btn = arrayOfNulls<Button>(4)
         var btn_unfocus: Button
         val btn_id = intArrayOf(R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3)

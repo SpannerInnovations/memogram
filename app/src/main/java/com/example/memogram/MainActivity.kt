@@ -9,6 +9,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var firstName : EditText;
     lateinit var topscreenimage : ImageView;
     lateinit var passwordEditText : EditText;
