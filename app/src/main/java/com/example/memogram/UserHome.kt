@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 
-
 class UserHome : AppCompatActivity() {
+
     lateinit var name : TextView;
     lateinit var btn_unfocus : Button;
     lateinit var btn : Button;
@@ -20,30 +20,23 @@ class UserHome : AppCompatActivity() {
 
         name = findViewById(R.id.homeusername);
         name.text = intent.getStringExtra("firstname")
+
         val btn = arrayOfNulls<Button>(4)
         var btn_unfocus: Button
         val btn_id = intArrayOf(R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3)
 
-
-
-        setContentView(R.layout.activity_user_home)
-
         for (i in btn_id.indices){
             btn[i] = findViewById<View>(btn_id[i]) as Button
             btn[i]!!.setBackgroundColor(Color.rgb(207, 207, 207))
-
         }
 
         btn[0]!!
-
-
 
         //creating the action bar and show the back arrow
         val actionBar: ActionBar? = supportActionBar
         // calling the action bar
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
 
     //method called when click on back arrow
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -55,6 +48,7 @@ class UserHome : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     fun onClick(v: View) {
         //setForcus(btn_unfocus, (Button) findViewById(v.getId()));
         //Or use switch
