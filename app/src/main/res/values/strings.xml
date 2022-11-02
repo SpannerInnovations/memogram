@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Memogram</string>
+    <string name="sign_up_label">Sign Up to: </string>
+    <string name="firstName_label">First name</string>
+    <string name="lastName_label">Last name</string>
+    <string name="username_label">Username</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="signUpButton">Join</string>
 </resources>

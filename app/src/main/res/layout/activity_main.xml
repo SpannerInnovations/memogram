@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/signupbtn"
+        android:onClick="openSignUpPage"
         android:text="SIGNUP"
         android:theme="@android:style/ThemeOverlay.Material.Dark"
         app:layout_constraintEnd_toEndOf="parent"
