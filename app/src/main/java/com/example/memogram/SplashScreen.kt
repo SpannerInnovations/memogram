@@ -13,12 +13,17 @@ import com.bumptech.glide.Glide
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
+    lateinit var logo: ImageView;
+    lateinit var flowers : ImageView;
+    lateinit var boomers : ImageView;
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 //
-        val imageView: ImageView = findViewById(R.id.SplashScreenImage)
+        logo = findViewById(R.id.SplashScreenImage)
+        flowers = findViewById(R.id.flowersimg)
+        boomers = findViewById(R.id.boomersimg)
 
         // This is used to hide the status bar and make
         // the splash screen as a full screen activity.
@@ -27,12 +32,14 @@ class SplashScreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        Glide.with(this).load(R.drawable.memogram).into(imageView)
+        Glide.with(this).load(R.drawable.memogram).into(logo)
+        Glide.with(this).load(R.drawable.flowers).into(flowers)
+        Glide.with(this).load(R.drawable.boomers).into(boomers)
 
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3000) // 3000 is the delayed time in milliseconds.
+        }, 5000) // 3000 is the delayed time in milliseconds.
     }
 }
