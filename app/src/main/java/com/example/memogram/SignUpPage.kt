@@ -36,11 +36,11 @@ class SignUpPage : AppCompatActivity() {
 
 
         val bundle = Bundle()
-        bundle.putString("key1",fname)
-        bundle.putString("key2",lname)
-        bundle.putString("key3",uname)
-        bundle.putString("key4",email)
-        bundle.putString("key5",password)
+        bundle.putString("firstname",fname)
+        bundle.putString("lastname",lname)
+        bundle.putString("username",uname)
+        bundle.putString("email",email)
+        bundle.putString("password",password)
 
 
         val intent = Intent(this,MainActivity::class.java)

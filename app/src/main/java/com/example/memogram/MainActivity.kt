@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     fun setTextAfterSignUp (){
         val bundle = intent.extras
         if (bundle != null) {
-            firstName.setText(bundle.getString("key3"))
+            firstName.setText(bundle.getString("username"))
         }
     }
 }
