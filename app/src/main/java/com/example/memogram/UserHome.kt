@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 
-
 class UserHome : AppCompatActivity() {
 
     lateinit var name : TextView;
