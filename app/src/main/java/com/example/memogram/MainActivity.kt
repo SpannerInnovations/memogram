@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         passwordEditText.transformationMethod = AsteriskTransformationMethod();
 
 
-
+       setTextAfterSignUp()
     }
 
-    fun loginBtn(view: View) {
+    fun loginBtn(view: View?) {
         val intent = Intent(this@MainActivity,UserHome::class.java)
         intent.putExtra("firstname", firstName.text.toString());
         startActivity(intent)
@@ -41,5 +41,12 @@ class MainActivity : AppCompatActivity() {
     fun openSignUpPage (view: View?){
         val intent = Intent(this,SignUpPage::class.java)
         startActivity(intent)
+    }
+
+    fun setTextAfterSignUp (){
+        val bundle = intent.extras
+        if (bundle != null) {
+            firstName.setText(bundle.getString("key3"))
+        }
     }
 }

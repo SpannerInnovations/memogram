@@ -12,6 +12,7 @@ class SignUpPage : AppCompatActivity() {
 
     lateinit var textFName : EditText
     lateinit var textLName: EditText
+    lateinit var userName: EditText
     lateinit var textEmail: EditText
     lateinit var textPassword: EditText
 
@@ -21,6 +22,7 @@ class SignUpPage : AppCompatActivity() {
 
         textFName = findViewById(R.id.editTextFirstName)
         textLName = findViewById(R.id.editTextLastName)
+        userName = findViewById(R.id.editTextUsername)
         textEmail = findViewById(R.id.editTextEmail)
         textPassword = findViewById(R.id.editTextPassword)
     }
@@ -28,20 +30,24 @@ class SignUpPage : AppCompatActivity() {
     fun joinClick(view: View?){
         val fname:String = textFName.text.toString()
         val lname:String = textLName.text.toString()
+        val uname:String = userName.text.toString()
         val email:String = textEmail.text.toString()
         val password:String = textPassword.text.toString()
+
 
         val bundle = Bundle()
         bundle.putString("key1",fname)
         bundle.putString("key2",lname)
-        bundle.putString("key3",email)
-        bundle.putString("key4",password)
+        bundle.putString("key3",uname)
+        bundle.putString("key4",email)
+        bundle.putString("key5",password)
+
 
         val intent = Intent(this,MainActivity::class.java)
         intent.putExtras(bundle)
         startActivity(intent)
 
-        Toast.makeText(baseContext,"Welcome to Memogram $fname", Toast.LENGTH_LONG).show()
+        Toast.makeText(baseContext,"Welcome to Memogram $fname! AKA:$uname ", Toast.LENGTH_LONG).show()
 
     }
 
