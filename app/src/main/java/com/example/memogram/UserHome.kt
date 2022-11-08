@@ -28,9 +28,8 @@ class UserHome : AppCompatActivity() {
 
         name = findViewById(R.id.homeusername);
         name.text = intent.getStringExtra("firstname")
-        val btn = arrayOfNulls<Button>(4)
-        var btn_unfocus: Button
-        val btn_id = intArrayOf(R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3)
+
+
 
         recyclerView = findViewById(R.id.imgRecyclerView)
         recyclerView.setHasFixedSize(true)
@@ -64,13 +63,7 @@ class UserHome : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 3)
 
 
-        for (i in btn_id.indices){
-            btn[i] = findViewById<View>(btn_id[i]) as Button
-            btn[i]!!.setBackgroundColor(Color.rgb(207, 207, 207))
 
-        }
-
-        btn[0]!!
 
 
 
@@ -90,16 +83,6 @@ class UserHome : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-    fun onClick(v: View) {
-        //setForcus(btn_unfocus, (Button) findViewById(v.getId()));
-        //Or use switch
-        when (v.getId()) {
-            R.id.btn0 -> setFocus(btn_unfocus, btn.findViewById(R.id.btn0))
-            R.id.btn1 -> setFocus(btn_unfocus, btn.findViewById(R.id.btn1))
-            R.id.btn2 -> setFocus(btn_unfocus, btn.findViewById(R.id.btn2))
-            R.id.btn3 -> setFocus(btn_unfocus, btn.findViewById(R.id.btn3))
-        }
     }
 
     private fun setFocus(btn_unfocus: Button, btn_focus: Button) {
