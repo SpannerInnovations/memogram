@@ -7,4 +7,7 @@
     <string name="email_label">Email</string>
     <string name="password_label">Password</string>
     <string name="signUpButton">Join</string>
+    <string name="lblConnection">Connections</string>
+    <string name="lblNumPost">Posts</string>
+
 </resources>
