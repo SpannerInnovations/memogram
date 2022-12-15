@@ -4,9 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="bottom|end"
-    tools:context=".UserHome">
+    tools:context=".UserHomeJFG">
 
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="411dp"
+        android:layout_height="542dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/connectionCounter"
@@ -14,21 +22,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
-        android:text="999"
+        android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toEndOf="@+id/postCounter"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/labelConnections"
-        android:layout_width="68dp"
-        android:layout_height="19dp"
+        android:layout_width="96dp"
+        android:layout_height="18dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:text="@string/lblConnection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/labelCounter"
         app:layout_constraintTop_toBottomOf="@+id/connectionCounter" />
 
@@ -59,7 +67,6 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:onClick="onEditProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
@@ -82,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
-        android:text="999"
+        android:text="0"
         app:layout_constraintStart_toEndOf="@+id/homeusername"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,6 +103,7 @@
         app:layout_constraintStart_toEndOf="@+id/homeusername"
         app:layout_constraintTop_toBottomOf="@+id/postCounter" />
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -108,6 +116,5 @@
         app:layout_constraintTop_toBottomOf="@+id/imgRecyclerView"
         app:layout_constraintVertical_bias="0.829"
         app:menu="@menu/bottom_nav_menu" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

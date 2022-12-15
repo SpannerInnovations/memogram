@@ -7,8 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 
-
-class SignUpPage : AppCompatActivity() {
+class EditProfileActivity : AppCompatActivity() {
 
     lateinit var textFName : EditText
     lateinit var textLName: EditText
@@ -18,13 +17,14 @@ class SignUpPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up_page)
+        setContentView(R.layout.activity_edit_profile)
 
         textFName = findViewById(R.id.editTextFirstName2)
         textLName = findViewById(R.id.editTextLastName2)
         userName = findViewById(R.id.editTextUsername2)
         textEmail = findViewById(R.id.editTextEmail2)
         textPassword = findViewById(R.id.editTextPassword2)
+
     }
 
     fun joinClick(view: View?){
@@ -36,24 +36,18 @@ class SignUpPage : AppCompatActivity() {
 
 
         val bundle = Bundle()
-        bundle.putString("firstname",fname)
-        bundle.putString("lastname",lname)
+        bundle.putString("firstname2",fname)
+        bundle.putString("lastname2",lname)
         bundle.putString("username",uname)
         bundle.putString("email",email)
         bundle.putString("password",password)
 
 
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this@EditProfileActivity, UserHomeJFG::class.java)
         intent.putExtras(bundle)
         startActivity(intent)
 
-        Toast.makeText(baseContext,"Welcome to Memogram $fname! AKA:$uname ", Toast.LENGTH_LONG).show()
+        Toast.makeText(baseContext,"Saved successfully $fname! AKA:$uname ", Toast.LENGTH_LONG).show()
 
     }
-
-
-
-
-
-
 }
