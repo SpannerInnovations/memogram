@@ -73,10 +73,10 @@ class UserHomeJFG : AppCompatActivity() {
 
 
         loadFragment(AddFragment())
-        bottomNav = findViewById(R.id.bottomNavigationView) as BottomNavigationView
+        bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> {
+                R.id.addFrag -> {
                     loadFragment(AddFragment())
                     true
                 }
