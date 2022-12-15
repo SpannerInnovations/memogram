@@ -29,4 +29,6 @@
     <string name="btn_upload">Upload From Gallery</string>
     <string name="title">Title</string>
     <string name="caption">Caption</string>
+
+    <string name="connection_lbl"> List of Connections </string>
 </resources>

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
+import android.view.View;
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
@@ -31,7 +31,7 @@ class UserHomeJFG : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_home)
+        setContentView(R.layout.activity_user_home_jfg)
 
         name = findViewById(R.id.homeusername);
         name.text = intent.getStringExtra("firstname2")

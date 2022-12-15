@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddFragment"
     android:id="@+id/addFrag">
-
 
     <Button
         android:id="@+id/btn_createAlbum"
@@ -15,6 +14,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="72dp"
         android:text="@string/btn_createAlbum"
+        android:textColor="@color/design_default_color_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,8 +25,8 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,6 +37,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
         android:text="@string/btn_takePhoto"
+        android:textColor="@color/design_default_color_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_createAlbum" />
 
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/btn_upload"
+        android:textColor="@color/design_default_color_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toEndOf="@+id/btn_takePhoto"
@@ -58,7 +60,7 @@
         android:layout_marginTop="260dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +73,11 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/caption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-</FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
