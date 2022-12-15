@@ -1,27 +1,32 @@
 package com.example.memogram
+
 import android.content.Intent
 import android.graphics.Color
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class UserHome : AppCompatActivity() {
+class UserHomeJFG : AppCompatActivity() {
+
     lateinit var name : TextView;
     lateinit var btn_unfocus : Button;
     lateinit var btn : Button;
     lateinit var recyclerView: RecyclerView
     lateinit var photoList: ArrayList<Photos>
     lateinit var photoAdapter: PhotosAdapter
-
+    lateinit var bottomNav : BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +34,7 @@ class UserHome : AppCompatActivity() {
         setContentView(R.layout.activity_user_home)
 
         name = findViewById(R.id.homeusername);
-        name.text = intent.getStringExtra("firstname")
+        name.text = intent.getStringExtra("firstname2")
 
 
 
@@ -67,7 +72,30 @@ class UserHome : AppCompatActivity() {
 
 
 
+        loadFragment(AddFragment())
+        bottomNav = findViewById(R.id.bottomNavigationView) as BottomNavigationView
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    loadFragment(AddFragment())
+                    true
+                }
+                R.id.connection -> {
+                    loadFragment(ConnectionFragment())
+                    true
+                }
+                R.id.shareFrag -> {
+                    loadFragment(ShareFragment())
+                    true
+                }
+                else -> {
 
+                    loadFragment(AddFragment())
+                    true
+
+                }
+            }
+        }
 
         //creating the action bar and show the back arrow
         val actionBar: ActionBar? = supportActionBar
@@ -75,12 +103,11 @@ class UserHome : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    fun onEditProfile(view: View){
-        val intent = Intent(this@UserHome,EditProfileActivity::class.java)
-        intent.putExtra("firstname", name.text.toString());
+    fun onAdd(view: View){
+        val intent = Intent(this,AddActivity::class.java)
+        //intent.putExtra("firstname", name.text.toString());
         startActivity(intent)
     }
-
 
     //method called when click on back arrow
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -91,6 +118,11 @@ class UserHome : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container,fragment)
+        transaction.commit()
     }
 
     private fun setFocus(btn_unfocus: Button, btn_focus: Button) {
