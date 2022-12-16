@@ -3,9 +3,11 @@ package com.example.memogram
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -25,6 +27,11 @@ class EditProfileActivity : AppCompatActivity() {
         textEmail = findViewById(R.id.editTextEmail2)
         textPassword = findViewById(R.id.editTextPassword2)
 
+
+        //creating the action bar and show the back arrow
+        val actionBar: ActionBar? = supportActionBar
+        // calling the action bar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun joinClick(view: View?){
@@ -49,5 +56,16 @@ class EditProfileActivity : AppCompatActivity() {
 
         Toast.makeText(baseContext,"Saved successfully $fname! AKA:$uname ", Toast.LENGTH_LONG).show()
 
+    }
+
+    //method called when click on back arrow
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
