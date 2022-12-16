@@ -21,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class UserHomeJFG : AppCompatActivity() {
 
     lateinit var name : TextView;
-
     lateinit var bottomNav : BottomNavigationView
 
 
@@ -32,7 +31,7 @@ class UserHomeJFG : AppCompatActivity() {
         name = findViewById(R.id.homeusername);
         name.text = intent.getStringExtra("firstname2")
 
-
+        loadFragment(UserHomeFragment())
         bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -44,7 +43,7 @@ class UserHomeJFG : AppCompatActivity() {
                     loadFragment(ConnectionFragment())
                     true
                 }
-                R.id.shareFrag -> {
+                R.id.share -> {
                     loadFragment(ShareFragment())
                     true
                 }

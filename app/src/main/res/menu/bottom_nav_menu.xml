@@ -17,8 +17,8 @@
         />
 
     <item
-        android:id="@+id/albums"
-        android:title="Albums"
+        android:id="@+id/share"
+        android:title="Share"
         android:icon="@mipmap/ic_albumns_foreground"
         />
 </menu>
