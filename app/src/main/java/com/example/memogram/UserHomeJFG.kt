@@ -21,11 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class UserHomeJFG : AppCompatActivity() {
 
     lateinit var name : TextView;
-    lateinit var btn_unfocus : Button;
-    lateinit var btn : Button;
-    lateinit var recyclerView: RecyclerView
-    lateinit var photoList: ArrayList<Photos>
-    lateinit var photoAdapter: PhotosAdapter
+
     lateinit var bottomNav : BottomNavigationView
 
 
@@ -37,46 +33,10 @@ class UserHomeJFG : AppCompatActivity() {
         name.text = intent.getStringExtra("firstname2")
 
 
-
-        recyclerView = findViewById(R.id.imgRecyclerView)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-
-        photoList = ArrayList()
-
-//        photoList.add(Photos(R.drawable.businessman, "businessman"))
-//        photoList.add(Photos(R.drawable.gooderham, "gooderham"))
-//        photoList.add(Photos(R.drawable.brackets, "brackets"))
-//        photoList.add(Photos(R.drawable.cntower, "cntower"))
-//        photoList.add(Photos(R.drawable.hangginglights, "hangging Lights"))
-//        photoList.add(Photos(R.drawable.park1, "park1"))
-//        photoList.add(Photos(R.drawable.streetlight, "streetlight"))
-//        photoList.add(Photos(R.drawable.streetlight2, "streetlight1"))
-//        photoList.add(Photos(R.drawable.trainstation, "trainstation"))
-//        photoList.add(Photos(R.drawable.trainstation2, "trainstation2"))
-//        photoList.add(Photos(R.drawable.unionstation, "unionstation"))
-//        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
-//        photoList.add(Photos(R.drawable.fall2, "fall2"))
-//        photoList.add(Photos(R.drawable.fall3, "fall3"))
-//        photoList.add(Photos(R.drawable.cafe, "cafe"))
-//        photoList.add(Photos(R.drawable.cntowerbackentrance, "cntower back entrance"))
-//        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
-//        photoList.add(Photos(R.drawable.officeentrance, "office Entrance"))
-
-        photoAdapter= PhotosAdapter(photoList)
-        recyclerView.adapter = photoAdapter
-
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
-
-
-
-
-        loadFragment(AddFragment())
         bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.addFrag -> {
+                R.id.add -> {
                     loadFragment(AddFragment())
                     true
                 }
@@ -88,10 +48,15 @@ class UserHomeJFG : AppCompatActivity() {
                     loadFragment(ShareFragment())
                     true
                 }
+
+                R.id.home ->{
+                    loadFragment(UserHomeFragment())
+                    true
+                }
                 else -> {
 
-                    loadFragment(AddFragment())
-                    true
+                    loadFragment(UserHomeFragment())
+                 false
 
                 }
             }
@@ -101,12 +66,6 @@ class UserHomeJFG : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         // calling the action bar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    fun onAdd(view: View){
-        val intent = Intent(this,AddActivity::class.java)
-        //intent.putExtra("firstname", name.text.toString());
-        startActivity(intent)
     }
 
     //method called when click on back arrow
