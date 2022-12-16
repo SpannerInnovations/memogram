@@ -51,17 +51,6 @@
         app:layout_constraintStart_toEndOf="@+id/userPhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/imgRecyclerView"
-        android:layout_width="409dp"
-        android:layout_height="550dp"
-        android:layout_marginTop="48dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeusername"
-        app:spanCount="2" />
-
     <ImageView
         android:id="@+id/userPhoto"
         android:layout_width="48dp"
@@ -114,8 +103,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgRecyclerView"
-        app:layout_constraintVertical_bias="0.829"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_takePhoto"
+        android:id="@+id/takePhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -50,7 +50,7 @@
         android:textColor="@color/design_default_color_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toEndOf="@+id/btn_takePhoto"
+        app:layout_constraintStart_toEndOf="@+id/takePhoto"
         app:layout_constraintTop_toBottomOf="@+id/txt_albumName" />
 
     <EditText
