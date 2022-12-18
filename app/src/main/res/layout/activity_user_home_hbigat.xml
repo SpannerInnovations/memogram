@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserHomeJFGPostActivity">
+    tools:context=".UserHomeHBigat">
 
     <TextView
         android:id="@+id/textView3"
@@ -13,7 +13,7 @@
         android:layout_marginStart="174dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="179dp"
-        android:text="MyAlbum"
+        android:text="Hugo's Album"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_height="31dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:text="Justine"
+        android:text="Hugo"
         app:layout_constraintStart_toEndOf="@+id/userPhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
-        android:text="1"
+        android:text="17"
         app:layout_constraintStart_toEndOf="@+id/homeusername"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,13 +121,17 @@
         app:layout_constraintVertical_bias="0.829"
         app:menu="@menu/bottom_nav_menu" />
 
-    <TextView
-        android:id="@+id/hugo"
-        android:layout_width="13dp"
-        android:layout_height="7dp"
-        android:onClick="openHugoActivity"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+    <Button
+        android:id="@+id/connectBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Connect"
+        android:textColor="@color/design_default_color_background"
+        android:onClick="connect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

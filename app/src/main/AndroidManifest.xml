@@ -11,6 +11,20 @@
         android:theme="@style/Theme.Memogram"
         tools:replace="android:icon">
         <activity
+            android:name=".UserHomeHBigat"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".UserHomeJFGPostActivity"
             android:exported="false">
             <meta-data

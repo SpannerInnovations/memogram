@@ -1,6 +1,5 @@
 package com.example.memogram
 
-import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,8 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-
-class UserHomeJFGPostActivity : AppCompatActivity() {
+class UserHomeHBigat : AppCompatActivity() {
     lateinit var name : TextView;
 
     lateinit var recyclerView: RecyclerView
@@ -26,34 +24,32 @@ class UserHomeJFGPostActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_home_jfgpost)
+        setContentView(R.layout.activity_user_home_hbigat)
 
         recyclerView = findViewById(R.id.imgRecyclerView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        Toast.makeText(this,"Post Successful", Toast.LENGTH_LONG).show()
 
 
         photoList = ArrayList()
 
-        photoList.add(Photos(R.drawable.photo1, "photo1"))
-//        photoList.add(Photos(R.drawable.gooderham, "gooderham"))
-//        photoList.add(Photos(R.drawable.brackets, "brackets"))
-//        photoList.add(Photos(R.drawable.cntower, "cntower"))
-//        photoList.add(Photos(R.drawable.hangginglights, "hangging Lights"))
-//        photoList.add(Photos(R.drawable.park1, "park1"))
-//        photoList.add(Photos(R.drawable.streetlight, "streetlight"))
-//        photoList.add(Photos(R.drawable.streetlight2, "streetlight1"))
-//        photoList.add(Photos(R.drawable.trainstation, "trainstation"))
-//        photoList.add(Photos(R.drawable.trainstation2, "trainstation2"))
-//        photoList.add(Photos(R.drawable.unionstation, "unionstation"))
-//        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
-//        photoList.add(Photos(R.drawable.fall2, "fall2"))
-//        photoList.add(Photos(R.drawable.fall3, "fall3"))
-//        photoList.add(Photos(R.drawable.cafe, "cafe"))
-//        photoList.add(Photos(R.drawable.cntowerbackentrance, "cntower back entrance"))
-//        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
-//        photoList.add(Photos(R.drawable.officeentrance, "office Entrance"))
+        photoList.add(Photos(R.drawable.gooderham, "gooderham"))
+        photoList.add(Photos(R.drawable.brackets, "brackets"))
+        photoList.add(Photos(R.drawable.cntower, "cntower"))
+        photoList.add(Photos(R.drawable.hangginglights, "hangging Lights"))
+        photoList.add(Photos(R.drawable.park1, "park1"))
+        photoList.add(Photos(R.drawable.streetlight, "streetlight"))
+        photoList.add(Photos(R.drawable.streetlight2, "streetlight1"))
+        photoList.add(Photos(R.drawable.trainstation, "trainstation"))
+        photoList.add(Photos(R.drawable.trainstation2, "trainstation2"))
+        photoList.add(Photos(R.drawable.unionstation, "unionstation"))
+        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
+        photoList.add(Photos(R.drawable.fall2, "fall2"))
+        photoList.add(Photos(R.drawable.fall3, "fall3"))
+        photoList.add(Photos(R.drawable.cafe, "cafe"))
+        photoList.add(Photos(R.drawable.cntowerbackentrance, "cntower back entrance"))
+        photoList.add(Photos(R.drawable.wonderingman, "wondering man"))
+        photoList.add(Photos(R.drawable.officeentrance, "office Entrance"))
 
         photoAdapter= PhotosAdapter(photoList)
         recyclerView.adapter = photoAdapter
@@ -69,14 +65,16 @@ class UserHomeJFGPostActivity : AppCompatActivity() {
         val actionBar: ActionBar? = supportActionBar
         // calling the action bar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    fun openHugoActivity (view: View?){
-        val intent = Intent(this,UserHomeHBigat::class.java)
-        startActivity(intent)
     }
 
 
+    fun connect(view: View?){
+        val connectionTV = findViewById<TextView>(R.id.connectionCounter)
+        connectionTV.text = "1"
+        val conBtn = findViewById<Button>(R.id.connectBtn)
+        conBtn.text = "Connected"
+    }
 
     //method called when click on back arrow
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

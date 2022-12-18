@@ -35,4 +35,9 @@
     <string name="connection_lbl"> List of Connections </string>
     <string name="textViewSelectPlatform">Select Platform</string>
     <string name="btnSharePhoto">Share</string>
+    <string-array name="contacts">
+        <item>Hugo Bigatto</item>
+        <item>Hussein Arafat</item>
+        <item>Kimberely Akit</item>
+    </string-array>
 </resources>
