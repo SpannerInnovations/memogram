@@ -70,14 +70,14 @@ class UserHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializePhotos()
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.imgRecyclerView)
-        recyclerView.layoutManager =layoutManager
-        recyclerView.setHasFixedSize(true)
-        photoAdapter = PhotosAdapter(photoList)
-        recyclerView.adapter =photoAdapter
-        recyclerView.layoutManager = GridLayoutManager(context, 3)
+        //initializePhotos()
+//        val layoutManager = LinearLayoutManager(context)
+//        recyclerView = view.findViewById(R.id.imgRecyclerView)
+//        recyclerView.layoutManager =layoutManager
+//        recyclerView.setHasFixedSize(true)
+//        photoAdapter = PhotosAdapter(photoList)
+//        recyclerView.adapter =photoAdapter
+//        recyclerView.layoutManager = GridLayoutManager(context, 3)
     }
     private fun initializePhotos(){
 

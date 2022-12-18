@@ -1,15 +1,20 @@
 package com.example.memogram
 
+import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.provider.ContactsContract.Contacts.Photo
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintSet.GONE
 import androidx.lifecycle.ViewModelProvider
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +32,7 @@ class AddFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     var btnSetup: Button? = null
+    var album_editText : EditText? = null
     private lateinit var addFragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +41,23 @@ class AddFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+           album_editText= view?.findViewById<EditText>(R.id.txt_albumName)
+
+        view?.findViewById<Button>(R.id.btn_createAlbum)?.setOnClickListener{
+            Toast.makeText(context,"$album_editText successfully created!", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         view?.findViewById<Button>(R.id.takePhoto)?.setOnClickListener{
             val i = Intent(activity, PhotoActivity::class.java)
+            activity?.startActivity(i)
+
+        }
+
+        view?.findViewById<Button>(R.id.btn_post)?.setOnClickListener{
+            val i = Intent(activity, UserHomeJFGPostActivity::class.java)
             activity?.startActivity(i)
         }
 
