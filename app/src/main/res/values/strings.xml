@@ -33,4 +33,6 @@
     <string name="caption">Caption</string>
 
     <string name="connection_lbl"> List of Connections </string>
+    <string name="textViewSelectPlatform">Select Platform</string>
+    <string name="btnSharePhoto">Share</string>
 </resources>
