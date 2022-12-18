@@ -41,15 +41,17 @@ class AddFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-           album_editText= view?.findViewById<EditText>(R.id.txt_albumName)
+        //album_editText= view?.findViewById<EditText>(R.id.txt_albumName).to
 
-        view?.findViewById<Button>(R.id.btn_createAlbum)?.setOnClickListener{
-            Toast.makeText(context,"$album_editText successfully created!", Toast.LENGTH_LONG).show()
-        }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view?.findViewById<Button>(R.id.btn_createAlbum)?.setOnClickListener{
+            Toast.makeText(context,"MyAlbum successfully created!", Toast.LENGTH_LONG).show()
+        }
         view?.findViewById<Button>(R.id.takePhoto)?.setOnClickListener{
             val i = Intent(activity, PhotoActivity::class.java)
             activity?.startActivity(i)

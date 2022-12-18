@@ -74,6 +74,8 @@ class UserHomeHBigat : AppCompatActivity() {
         connectionTV.text = "1"
         val conBtn = findViewById<Button>(R.id.connectBtn)
         conBtn.text = "Connected"
+
+        Toast.makeText(baseContext,"Connected to Hugo Bigatto!", Toast.LENGTH_LONG).show()
     }
 
     //method called when click on back arrow

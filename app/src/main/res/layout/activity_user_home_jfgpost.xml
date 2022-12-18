@@ -119,15 +119,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgRecyclerView"
         app:layout_constraintVertical_bias="0.829"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu" >
 
-    <TextView
-        android:id="@+id/hugo"
-        android:layout_width="13dp"
-        android:layout_height="7dp"
-        android:onClick="openHugoActivity"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/hugo"
+            android:layout_width="81dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="320dp"
+            android:onClick="openHugoActivity"
+            app:layout_constraintStart_toStartOf="parent" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
